@@ -20,13 +20,17 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }} 
+          
+      - name: Build
+        run: dotnet build --no-restore
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
       
       # Run dotnet build and publish
       - name: dotnet build and publish
         run: |
           dotnet restore
-          dotnet build --configuration Release
-          dotnet test --no-build --verbosity normal
+          dotnet build --configuration Release          
           dotnet publish -c Release -o '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp' 
           
       # Deploy to Azure Web apps
