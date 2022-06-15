@@ -11,7 +11,7 @@ namespace CI_DEMO
         public SqlQuery(string query, string connectionString)
         {
             Query = query;
-            ConnectionString = connectionString;            
+            ConnectionString = connectionString;
         }
         public DataTable GetData()
         {
@@ -27,8 +27,9 @@ namespace CI_DEMO
                         return dataTable;
                     }
 
+                }
             }
-            return null;
+                return null;
         }
     }
 }
