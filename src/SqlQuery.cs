@@ -26,10 +26,9 @@ namespace CI_DEMO
                         dataTable.Load(reader);
                         return dataTable;
                     }
-
                 }
             }
-                return null;
+                //return null;
         }
     }
 }
